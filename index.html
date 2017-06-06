@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title></title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <div style="min-height: 200px;">
+      <div style="margin-bottom: 20px;" id="content">
+
+        <h1><strong id="num"></strong></h1>
+        <h3><strong id="soup"></strong></h3>
+        <h3 style="display: inline"><span id="cn-name"></span> <small id="en-name"></small></h3><br>
+        <h3 id="thank" style="display: none; text-align: right"><i>Thank you!</i></h3>
+      </div>
+    </div>
+    <a href="javascript:;" class="btn btn-info" onclick="f_lucky()">I'm feeling lucky</a>
+  </div>
+
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+  var menu = {
+    "1" : {
+      "cn" : "叉燒拉面",
+      "en" : "BBQ Pork Ramen",
+      "sp" : "担担筒骨 。湯頭"
+    },
+    "2" : {
+      "cn" : "牛肉泡菜拉面",
+      "en" : "Beef Kimchi Ramen",
+      "sp" : "担担筒骨 。湯頭"
+    }
+    ,
+    "3" : {
+      "cn" : "面包雞拉面",
+      "en" : "Chicken Cutlet Ramen",
+      "sp" : "担担筒骨 。湯頭"
+    },
+    "4" : {
+      "cn" : "面包豬拉面",
+      "en" : "Pork Cutlet Ramen",
+      "sp" : "担担筒骨 。湯頭"
+    },
+    "5" : {
+      "cn" : "牛肉筋拉面",
+      "en" : "Beef Tendon Ramen",
+      "sp" : "担担筒骨 。湯頭"
+    },
+    "6" : {
+      "cn" : "豬軟骨拉面",
+      "en" : "Tendorous Rib Ramen",
+      "sp" : "担担筒骨 。湯頭"
+    },
+    "7" : {
+      "cn" : "海鮮拉面",
+      "en" : "Seafood Ramen",
+      "sp" : "担担筒骨 。湯頭"
+    },
+    "20" : {
+      "cn" : "叉燒拉面",
+      "en" : "BBQ Pork Ramen",
+      "sp" : "冬陰功 。湯頭"
+    },
+    "21" : {
+      "cn" : "牛肉泡菜拉面",
+      "en" : "Beef Kimchi Ramen",
+      "sp" : "冬陰功 。湯頭"
+    },
+    "22" : {
+      "cn" : "面包雞拉面",
+      "en" : "Chicken Cutlet Ramen",
+      "sp" : "冬陰功 。湯頭"
+    },
+    "23" : {
+      "cn" : "面包豬拉面",
+      "en" : "Pork Cutlet Ramen",
+      "sp" : "冬陰功 。湯頭"
+    },
+    "24" : {
+      "cn" : "面包雞拉面",
+      "en" : "Chicken Cutlet Ramen",
+      "sp" : "冬陰功 。湯頭"
+    },
+    "30" : {
+      "cn" : "叉燒拉面",
+      "en" : "BBQ Pork Ramen",
+      "sp" : "咖喱 。湯頭"
+    },
+    "31" : {
+      "cn" : "面包雞拉面",
+      "en" : "Chicken Cutlet Ramen",
+      "sp" : "咖喱 。湯頭"
+    },
+    "32" : {
+      "cn" : "面包豬拉面",
+      "en" : "Pork Cutlet Ramen",
+      "sp" : "咖喱 。湯頭"
+    },
+    "33" : {
+      "cn" : "海鮮拉面",
+      "en" : "Seafood Ramen",
+      "sp" : "咖喱 。湯頭"
+    },
+    "40" : {
+      "cn" : "雜菜魷魚絲烏冬面",
+      "en" : "Squid with Assorted Vegetables Udon",
+      "sp" : "雞 。湯頭"
+    },
+    "41" : {
+      "cn" : "雜菜天婦羅蝦烏冬面",
+      "en" : "Tempura Shrimp w/ Assorted Vegetables Udon",
+      "sp" : "雞 。湯頭"
+    },
+    "42" : {
+      "cn" : "雜菜蟹柳烏冬面",
+      "en" : "Crab with Assorted Vegetables Udon",
+      "sp" : "雞 。湯頭"
+    },
+    "43" : {
+      "cn" : "海鮮烏冬面",
+      "en" : "Seafood Udon",
+      "sp" : "雞 。湯頭"
+    }
+  };
+
+  function f_lucky() {
+    var count = 0;
+
+    var interval_1 = setInterval(function () {
+      var num;
+      do {
+        num = Math.floor(Math.random() * 43 + 1);
+      } while(menu[num] == undefined);
+
+      $("#num").html("N" + num);
+      $("#soup").html(menu[num]['sp']);
+      $("#cn-name").html(menu[num]['cn']);
+      $("#en-name").html(menu[num]['en']);
+      if (count >= 20) {
+        clearInterval(interval_1);
+        $("#content").hide(50).delay(200).show(300);
+        $("#thank").delay(900).show(100);
+      }
+      count++;
+    }, 100);
+  }
+  </script>
+</body>
+</html>
